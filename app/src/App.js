@@ -1,4 +1,3 @@
-import "./App.css";
 import HeaderResponsive from "./components/Header";
 import Alletavle from "./components/Alletavle";
 
