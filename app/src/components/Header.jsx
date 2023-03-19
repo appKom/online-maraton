@@ -10,15 +10,15 @@ function Header() {
           <img className='header-logo' src="/temporary-logo.jpg" alt="" />
         </div>
         <div className='header-bottom'>
-          <div className='nav-btn'>
+          <a href='' target='_blank' className='nav-btn'>
             SPONSORER
-          </div>
-          <div className='nav-btn nav-btn-main'>
+          </a>
+          <a href='' target='_blank' className='nav-btn nav-btn-main'>
             MELD DEG PÅ
-          </div>
-          <div className='nav-btn'>
+          </a>
+          <a href='' target='_blank' className='nav-btn'>
             LEDERTAVLE
-          </div>
+          </a>
         </div>
       </div>
     </div>
