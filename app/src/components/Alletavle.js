@@ -20,7 +20,7 @@ const Alletavle = (props) => {
     return (
       <tr key={index}>
         <td>{row.plassering}</td>
-        <td>{row.firstname}</td>
+        <td>{row.firstname + " " + row.lastname}</td>
         <td>{row.total}</td>
       </tr>
     );
