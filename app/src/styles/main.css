@@ -57,7 +57,7 @@ html {
 }
 
 .nav-btn:hover {
-  color: var(--onlinebluedark);
+  color: var(--onlineyellow);
 }
 
 .nav-btn-main {
@@ -70,7 +70,7 @@ html {
 
 .nav-btn-main:hover {
   color: white;
-  background-color: var(--onlinebluedark);
+  background-color: var(--onlineyellow);
 }
 
 @media only screen and (max-width: 750px) {
