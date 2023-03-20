@@ -100,6 +100,20 @@ html {
   }
 }
 
+@media only screen and (max-width: 430px) {
+
+  .header-logo {
+    width: 17.5rem;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .header-bottom {
+    padding-top: 2rem;
+    flex-direction: column;
+  }
+}
+
 /* FOOTER */
 
 .footer-main {
