@@ -11,7 +11,7 @@ const Alletavle = (props) => {
 
   const rows = data.map((row, index) => {
     return (
-      <tr key={row.firstname}>
+      <tr key={index}>
         <td>{index + 1}</td>
         <td>{row.firstname}</td>
         <td>{row.total}</td>

@@ -1,6 +1,7 @@
-import "./App.css";
+
 import HeaderResponsive from "./components/Header";
 import Alletavle from "./components/Alletavle";
+import JoggaSpesial from "./components/JoggaSpesial";
 
 function App() {
   const links = [
@@ -35,6 +36,7 @@ function App() {
   return (
     <div>
       <HeaderResponsive links={links} />
+      <JoggaSpesial />
       <Alletavle data={alletavleData} />
     </div>
   );
