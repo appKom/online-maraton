@@ -1,5 +1,6 @@
 import HeaderResponsive from "./components/Header";
 import Alletavle from "./components/Alletavle";
+import { useEffect, useState } from "react";
 
 function App() {
   const links = [
@@ -8,7 +9,22 @@ function App() {
     { label: "Ledertavle", link: "/" },
   ];
 
-  const alletavleData = [
+  const [verdi, setVerdi] = useState([]);
+  useEffect(() => {
+    fetch("https://onlinemarathon-api.onrender.com/data", {
+      method: "GET",
+
+      headers: {
+        "Allow-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "*",
+      },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        setVerdi(data);
+      });
+  }, []);
+  const alletavleData = verdi; /*[
     { firstname: "Big D", lastname: "L.", total: "123" },
     { firstname: "Chris", lastname: "O.", total: "124" },
     { firstname: "Jesper", lastname: "L.", total: "125" },
@@ -29,7 +45,7 @@ function App() {
     { firstname: "Matias", lastname: "O.", total: "140" },
     { firstname: "David", lastname: "L.", total: "141" },
     { firstname: "Jøgga", lastname: "O.", total: "142" },
-  ];
+  ];*/
 
   return (
     <div>
