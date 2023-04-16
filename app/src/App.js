@@ -40,8 +40,8 @@ function App() {
         text="Barnekreft er ikke det samme som kreft hos voksne. Hos barn utvikles kreften hurtig 
         og det finnes ingen kjente ytre faktorer som er av betydning for hvordan sykdommen utvikler seg. 
         Rundt 200 barn og unge mellom 0 til 18 år rammes hvert år av en kreftsykdom. Totaloverlevelsen 
-        av barnekreft er i Norge er cirka 85 prosent.
-
+        av barnekreft er i Norge er cirka 85 prosent. 
+        
         Selv om kreft hos barn og ungdom heldigvis er sjelden, er man desto mer avhengig av både nasjonalt, 
         nordisk og internasjonalt samarbeid for å oppnå kunnskap og kunne vurdere behandlingsresultater.
 
@@ -53,11 +53,19 @@ function App() {
 
       <Paragraph
         header="Hvordan løper vi?"
-        text="Vi ønsker å samle flest mulig onlinere som vil løpe for å samle inn penger til barnekreftforeningen.
-        Pengene er tenkt å komme fra bedrifter som vil sponse x antall kroner per onliner som fullfører x antall kilometer.
+        text="Vi ønsker å samle flest mulig onlinere som vil løpe for å samle inn penger til barnekreftforeningen. 
+      
+        Man kan velge å støtte på hvilken måte man selv vil. Du kan støtte en enkelt løper, eller sponse 
+        x antall kroner per onliner som fullfører x antall kilometer. 
+        
+        Vi bruker Stava for å hente info om hvor langt hver deltaker har løpt. Du må derfor opprette en bruker på 
+        Strava på www.strava.com dersom du ikke har det fra før. 
 
+        For å delta i innsamlingen som løper, melder du deg på via MELD DEG PÅ-knappen øverst på siden. 
       "
+    
       />
+      
 
       <LederTavle />
     
