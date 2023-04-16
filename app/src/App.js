@@ -1,5 +1,6 @@
 import HeaderResponsive from "./components/Header";
 import Alletavle from "./components/Alletavle";
+import CoverImage from "./components/CoverImage";
 
 function App() {
   const links = [
@@ -34,6 +35,8 @@ function App() {
   return (
     <div>
       <HeaderResponsive links={links} />
+      <CoverImage image="/Dall-E3in1.jpg" />
+
       <Alletavle data={alletavleData} />
     </div>
   );
