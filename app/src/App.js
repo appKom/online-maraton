@@ -60,12 +60,12 @@ function App() {
       />
 
       <LederTavle />
-
+    
       <AlleTavle data={alletavleData} />
 
       <Paragraph
         header="Sponsorer"
-        text="Bedrifter som ønsker å sponse prosjektet kan ta kontakt med XXX. 
+        text="Bedrifter som ønsker å sponse prosjektet kan ta kontakt med kontakt@online.ntnu.no. 
       "
       />
 
