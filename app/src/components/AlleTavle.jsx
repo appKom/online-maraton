@@ -9,29 +9,8 @@ function sortByTotal(data) {
 }
 
 const AlleTavle = (props) => {
-  const [verdi, setVerdi] = useState([]);
-  useEffect(() => {
-    fetchSetData();
-  }, []);
-
-  const fetchSetData = async () => {
-    fetch("https://onlinemarathon-api.onrender.com/data", {
-      method: "GET",
-
-      headers: {
-        "Allow-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "*",
-      },
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        setVerdi(data);
-        console.log(data);
-      });
-  };
-
   const [inputValue, setInputValue] = useState("");
-  const data = sortByTotal(verdi).map((item, index) => ({
+  const data = sortByTotal(props.data).map((item, index) => ({
     ...item,
     plassering: index + 1,
   }));
