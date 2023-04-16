@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Table, ScrollArea, rem } from "@mantine/core";
-import "../styles/Alletavle.css";
+import "../styles/AlleTavle.css";
 import { TextInput} from '@mantine/core';
 
 function sortByTotal(data) {
   return data.sort((a, b) => b.total - a.total);
 }
 
-const Alletavle = (props) => {
-  
+const AlleTavle = (props) => {
+
   const [inputValue, setInputValue] = useState("");
   const data = sortByTotal(props.data).map((item, index) => ({ ...item, plassering: index + 1 }));
 
@@ -37,7 +37,7 @@ const Alletavle = (props) => {
       label="Søk etter ditt navn"
       placeholder="Søk"
       />
-    
+
       <br />
 
       <ScrollArea h={300}>
@@ -56,4 +56,4 @@ const Alletavle = (props) => {
   );
 };
 
-export default Alletavle;
+export default AlleTavle;
