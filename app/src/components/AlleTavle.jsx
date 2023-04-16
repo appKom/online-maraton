@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Table, ScrollArea, rem } from "@mantine/core";
-import "../styles/AlleTavle.css";
+//import "../styles/AlleTavle.css";
 import { TextInput} from '@mantine/core';
 
 function sortByTotal(data) {
