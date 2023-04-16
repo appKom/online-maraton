@@ -1,16 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { Table, ScrollArea, rem } from "@mantine/core";
 //import "../styles/AlleTavle.css";
-import { TextInput} from '@mantine/core';
+import { TextInput } from "@mantine/core";
 
 function sortByTotal(data) {
   return data.sort((a, b) => b.total - a.total);
 }
 
 const AlleTavle = (props) => {
+  const [verdi, setVerdi] = useState([]);
+  useEffect(() => {
+    fetchSetData();
+  }, []);
+
+  const fetchSetData = async () => {
+    fetch("https://onlinemarathon-api.onrender.com/data", {
+      method: "GET",
+
+      headers: {
+        "Allow-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "*",
+      },
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        setVerdi(data);
+        console.log(data);
+      });
+  };
 
   const [inputValue, setInputValue] = useState("");
-  const data = sortByTotal(props.data).map((item, index) => ({ ...item, plassering: index + 1 }));
+  const data = sortByTotal(verdi).map((item, index) => ({
+    ...item,
+    plassering: index + 1,
+  }));
 
   const filteredData = data.filter((row) =>
     row.firstname.toLowerCase().includes(inputValue.toLowerCase())
@@ -33,9 +57,11 @@ const AlleTavle = (props) => {
   return (
     <>
       <TextInput
-      type="text" value={inputValue} onChange={handleInputChange}
-      label="Søk etter ditt navn"
-      placeholder="Søk"
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        label="Søk etter ditt navn"
+        placeholder="Søk"
       />
 
       <br />
