@@ -5,24 +5,8 @@ import Paragraph from "./components/Paragraph";
 import CoverImage from "./components/CoverImage";
 import LederTavle from "./components/LederTavle";
 import AlleTavle from "./components/AlleTavle";
-import { useEffect, useState } from "react";
 
-const [verdi, setVerdi] = useState([]);
-useEffect(() => {
-  fetch("https://onlinemarathon-api.onrender.com/data", {
-    method: "GET",
-
-    headers: {
-      "Allow-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": "*",
-    },
-  })
-    .then((r) => r.json())
-    .then((data) => {
-      setVerdi(data);
-    });
-}, []);
-const alletavleData = verdi; /*[
+const alletavleData = []; /*[
     { firstname: "Big D", lastname: "L.", total: "123" },
     { firstname: "Chris", lastname: "O.", total: "124" },
     { firstname: "Jesper", lastname: "L.", total: "125" },
