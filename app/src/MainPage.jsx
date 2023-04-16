@@ -68,7 +68,7 @@ const MainPage = (props) => {
 
       <LederTavle />
     
-      <AlleTavle data={alletavleData} />
+      <AlleTavle data={stravaData} />
 
       <Paragraph
         header="Sponsorer"
