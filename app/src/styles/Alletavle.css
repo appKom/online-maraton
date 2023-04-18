@@ -3,3 +3,19 @@
     top: 0;
     background-color: #f1f1f1;
 }
+
+.alleTavle{
+    width: 60%;
+    margin: 0 auto;
+}
+
+th {
+    background-color: #0d5474;
+    color: white !important;
+}
+
+.searchInput label{
+    color: #0d5474;
+    font: bold;
+    font-size: 20px;
+}
