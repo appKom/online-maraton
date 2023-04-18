@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Sponsors from "./components/Sponsors";
 import Paragraph from "./components/Paragraph";
 import CoverImage from "./components/CoverImage";
-import LederTavle from "./components/LederTavle";
 import AlleTavle from "./components/AlleTavle";
 import { useState, useEffect } from "react";
 
@@ -12,6 +11,7 @@ const MainPage = (props) => {
   useEffect(() => {
     fetchSetData();
   }, []);
+  
 
   const fetchSetData = async () => {
     fetch("https://onlinemarathon-api.onrender.com/data", {
@@ -64,19 +64,18 @@ const MainPage = (props) => {
       "
     
       />
-      
-
-      <LederTavle />
-    
-      <AlleTavle data={stravaData} />
+      <div id="ledertavle">
+        <AlleTavle data={stravaData} />
+      </div>
 
       <Paragraph
         header="Sponsorer"
         text="Bedrifter som ønsker å sponse prosjektet kan ta kontakt med kontakt@online.ntnu.no. 
       "
       />
-
-      <Sponsors />
+      <div id="sponsorer" >
+        <Sponsors />
+      </div>
 
       <Footer />
     </div>
