@@ -23,6 +23,7 @@ div {
 
 .jogga-svg {
     width: 50%;
+    cursor: default;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -41,4 +42,26 @@ div {
     .jogga-svg {
         width: 100%;
     }
+}
+
+.initials-bubble {
+    display: block;
+}
+
+.initials-bubble:hover {
+    display: none;
+    cursor: default;
+}
+
+.name-bubble:hover {
+    cursor: default;
+}
+
+.name-bubble {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.name-bubble.show {
+    opacity: 1;
 }

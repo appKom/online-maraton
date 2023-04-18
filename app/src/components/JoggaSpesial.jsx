@@ -31,7 +31,20 @@ const JoggaSpesial = (data) => {
     "#29888C",
   ];
 
-  console.log(data.data);
+  //console.log(data.data);
+
+  const [hoveredRunner, setHoveredRunner] = React.useState(null);
+  const [showNameBubble, setShowNameBubble] = React.useState(false);
+
+  const handleBubbleMouseEnter = (runner) => {
+    setHoveredRunner(runner);
+    setShowNameBubble(true);
+  };
+
+  const handleBubbleMouseLeave = () => {
+    setHoveredRunner(null);
+    setShowNameBubble(false);
+  };
 
   return (
     <div className="jogga-div">
@@ -42,22 +55,23 @@ const JoggaSpesial = (data) => {
         viewBox={`0 0 ${viewboxWidth} ${viewboxHeight}`}
       >
         {data.data.map((runner, i) => {
-          //let xPosition = ((i + 1) / numOfRunners) * firstplaceX - 15;
-          let xPosition =
-            (runner.total / firstPlaceTotal) * firstplaceX * 0.8 + 45;
+          let xPosition = (runner.total / firstPlaceTotal) * firstplaceX * 0.8 + 45;
           let yPosition = trackTop + i * grassHeight;
 
           let runnerColor = colors[i % colors.length];
 
           return (
-            <g key={i}>
+            <g
+              key={i}
+              >
               {/* Whole lane */}
               <rect
                 width={trackWidth}
                 height={grassHeight}
                 transform={`translate(
                     ${xConstant}
-                    ${trackTop + i * grassHeight})`}
+                    ${trackTop + i * grassHeight}
+                  )`}
                 fill="#0d5474"
                 strokeWidth=".75"
                 stroke="#072f41"
@@ -65,10 +79,10 @@ const JoggaSpesial = (data) => {
               {/* Starting line */}
               <rect
                 width="1"
-                height={grassHeight - 6}
+                height={grassHeight - 10}
                 transform={`translate(
                     ${xConstant + grassHeight}
-                    ${yPosition + 3}
+                    ${yPosition + 5}
                     )`}
                 fill="#FFFFFF"
               />
@@ -86,47 +100,80 @@ const JoggaSpesial = (data) => {
 
               {/* Markers */}
               {/* Marker bubble */}
-              <ellipse
-                rx={nodeRadius}
-                ry={nodeRadius}
-                fill={runnerColor}
-                transform={`translate(
-                    ${xConstant + xPosition}
-                    ${yPosition - 20}
-                )`}
-              />
-              {/* Marker text */}
-              <text
-                x={xConstant + xPosition}
-                y={yPosition - 20}
-                textAnchor="middle"
-                fill="#fff"
-                strokeWidth="0"
-                dy=".3em"
-                fontSize={10}
+              <svg
+                className="initals-bubble"
+                onMouseEnter={() => handleBubbleMouseEnter(runner)}
+                onMouseLeave={() => handleBubbleMouseLeave()}
+                y="2"
+                >
+                <ellipse
+                  className="initials-ellipse"
+                  rx={nodeRadius}
+                  ry={nodeRadius}
+                  fill={runnerColor}
+                  transform={`translate(
+                      ${xConstant + xPosition}
+                      ${yPosition - 20}
+                  )`}
+                />
+                {/* Marker text */}
+                <text
+                  x={xConstant + xPosition}
+                  y={yPosition - 20}
+                  textAnchor="middle"
+                  fill="#fff"
+                  strokeWidth="0"
+                  dy=".3em"
+                  fontSize={10}
+                >
+                  {/*{runner.firstname} {runner.lastname}*/}
+                  {runner.firstname[0]}
+                  {runner.lastname[0]}
+                </text>
+
+                {/*<text x="60" y={yPosition + 16} fontSize="10" fill="#fff">
+                  {runner.firstname} {runner.lastname} → {runner.total} m
+                </text>*/}
+
+                {/* Marker triangle */}
+                <polygon
+                  fill={runnerColor}
+                  points="0,0 10,0 5,7.5"
+                  transform={`translate(
+                      ${xConstant + xPosition - nodeRadius / 2}
+                      ${yPosition + triangleWidth - 25}
+                      )`}
+                />
+              </svg>
+              {hoveredRunner === runner && (
+              <svg
+                className={`name-bubble ${showNameBubble ? 'show' : ''}`}
+                x={xPosition + xConstant - 35}
+                y={yPosition - 28}
+                onMouseEnter={() => handleBubbleMouseEnter(runner)}
+                onMouseLeave={() => handleBubbleMouseLeave()}
               >
-                {/*{runner.firstname} {runner.lastname}*/}
-                {runner.firstname[0]}
-                {runner.lastname[0]}
-              </text>
-              {/* Marker triangle */}
-              <polygon
-                fill={runnerColor}
-                points="0,0 10,0 5,7.5"
-                transform={`translate(
-                    ${xConstant + xPosition - nodeRadius / 2}
-                    ${yPosition + triangleWidth - 25}
-                    )`}
-              />
+                <rect x="0" y="0" rx="10" ry="10" width="70" height={20} fill={runnerColor} />
+                <text className="name-text" x="10" y="11" fontSize="10" fill="#fff">
+                  {runner.firstname} {runner.lastname}
+                </text>
+                <text x="13" y="17" fontSize="5" fill="#fff">
+                  Distanse: {(runner.total / 1000).toFixed(2)} km
+                </text>
+              </svg>
+              )}
+
               {/* Running man */}
               <image
                 href="/running-person.png"
-                width="30"
-                height="30"
+                width="25"
+                height="25"
                 transform={`translate(
-                    ${xConstant + xPosition - nodeRadius / 2 - 13}
-                    ${yPosition + triangleWidth - 17}
+                    ${xConstant + xPosition - nodeRadius / 2 - 10}
+                    ${yPosition + triangleWidth - 15}
                     )`}
+                onMouseEnter={() => handleBubbleMouseEnter(runner)}
+                onMouseLeave={() => handleBubbleMouseLeave()}
               />
             </g>
           );
