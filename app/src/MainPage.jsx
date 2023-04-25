@@ -4,6 +4,7 @@ import Sponsors from "./components/Sponsors";
 import Paragraph from "./components/Paragraph";
 import CoverImage from "./components/CoverImage";
 import AlleTavle from "./components/AlleTavle";
+import JoggaSpesial from "./components/JoggaSpesial";
 import { useState, useEffect } from "react";
 
 const MainPage = (props) => {
@@ -30,7 +31,7 @@ const MainPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="mainPage" >
       <Header />
       <CoverImage image="/temporary-cover1.jpg" />
 
@@ -67,6 +68,8 @@ const MainPage = (props) => {
       <div id="ledertavle">
         <AlleTavle data={stravaData} />
       </div>
+
+      <JoggaSpesial data={stravaData} />
 
       <Paragraph
         header="Sponsorer"
