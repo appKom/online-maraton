@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Sponsors from "./components/Sponsors";
 import Paragraph from "./components/Paragraph";
 import CoverImage from "./components/CoverImage";
-import LederTavle from "./components/LederTavle";
 import AlleTavle from "./components/AlleTavle";
 import JoggaSpesial from "./components/JoggaSpesial";
 import { useState, useEffect } from "react";
@@ -13,6 +12,7 @@ const MainPage = (props) => {
   useEffect(() => {
     fetchSetData();
   }, []);
+  
 
   const fetchSetData = async () => {
     fetch("https://onlinemarathon-api.onrender.com/data", {
@@ -37,7 +37,15 @@ const MainPage = (props) => {
 
       <Paragraph
         header="Hvorfor løper vi?"
-        text="Barnekreft ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Barnekreft ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        text="Barnekreft er ikke det samme som kreft hos voksne. Hos barn utvikles kreften hurtig 
+        og det finnes ingen kjente ytre faktorer som er av betydning for hvordan sykdommen utvikler seg. 
+        Rundt 200 barn og unge mellom 0 til 18 år rammes hvert år av en kreftsykdom. Totaloverlevelsen 
+        av barnekreft er i Norge er cirka 85 prosent. 
+        
+        Selv om kreft hos barn og ungdom heldigvis er sjelden, er man desto mer avhengig av både nasjonalt, 
+        nordisk og internasjonalt samarbeid for å oppnå kunnskap og kunne vurdere behandlingsresultater.
+
+        Online Linjeforening ønsker å støtte Barnekreftsforeningens arbeid, og det gjør vi ved å løpe! 
       "
       />
 
@@ -45,23 +53,32 @@ const MainPage = (props) => {
 
       <Paragraph
         header="Hvordan løper vi?"
-        text="Strava ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        text="Vi ønsker å samle flest mulig onlinere som vil løpe for å samle inn penger til barnekreftforeningen. 
+      
+        Man kan velge å støtte på hvilken måte man selv vil. Du kan støtte en enkelt løper, eller sponse 
+        x antall kroner per onliner som fullfører x antall kilometer. 
+        
+        Vi bruker Stava for å hente info om hvor langt hver deltaker har løpt. Du må derfor opprette en bruker på 
+        Strava på www.strava.com dersom du ikke har det fra før. 
+
+        For å delta i innsamlingen som løper, melder du deg på via MELD DEG PÅ-knappen øverst på siden. 
       "
+    
       />
-
-      <LederTavle />
-
-      <AlleTavle data={stravaData} />
+      <div id="ledertavle">
+        <AlleTavle data={stravaData} />
+      </div>
 
       <JoggaSpesial data={stravaData} />
 
       <Paragraph
         header="Sponsorer"
-        text="ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Barnekreft ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+        text="Bedrifter som ønsker å sponse prosjektet kan ta kontakt med kontakt@online.ntnu.no. 
       "
       />
-
-      <Sponsors />
+      <div id="sponsorer" >
+        <Sponsors />
+      </div>
 
       <Footer />
     </div>
