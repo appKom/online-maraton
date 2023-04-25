@@ -62,9 +62,13 @@ const MainPage = (props) => {
 
         For å delta i innsamlingen som løper, melder du deg på via MELD DEG PÅ-knappen øverst på siden. 
       "
-    
       />
       <div id="ledertavle">
+        <Paragraph
+          header="Hvem løper?"
+          text="Her kan du se hvem som har meldt seg på, hvor langt de har løpt totalt og hvilken plass de ligger på sammenlagt.
+          NB! Tabellen kan ta inntil 30 sekunder på å laste."
+        />
         <AlleTavle data={stravaData} />
       </div>
 
