@@ -2,8 +2,12 @@ import React from "react";
 import "../styles/JoggaSpesial.css";
 import { TailSpin } from  'react-loader-spinner'
 
+import sortByTotal from "./AlleTavle.jsx";
+
 const JoggaSpesial = (data) => {
 
+  sortByTotal(data)
+  
   console.log(data)
 
   const grassHeight = 25;
@@ -65,7 +69,6 @@ const JoggaSpesial = (data) => {
 
   return (
     <div>
-      <div className="paragraph-header jogga-header">Ledere</div>
       <div className="jogga-div">
         {data.data.length > 0 ? (
           <svg
