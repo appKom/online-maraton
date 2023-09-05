@@ -4,8 +4,6 @@ import { TailSpin } from  'react-loader-spinner'
 
 const JoggaSpesial = (data) => {
 
-  console.log(data)
-
   const grassHeight = 25;
   const nodeRadius = 10;
   const numOfRunners = data.data.length;
@@ -47,8 +45,6 @@ const JoggaSpesial = (data) => {
     "#3A8E71",
     "#29888C",
   ];
-
-  //console.log(data.data);
 
   const [hoveredRunner, setHoveredRunner] = React.useState(null);
   const [showNameBubble, setShowNameBubble] = React.useState(false);
