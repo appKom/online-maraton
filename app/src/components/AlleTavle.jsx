@@ -24,7 +24,7 @@ const AlleTavle = (props) => {
       <tr key={index}>
         <td>{row.plassering}</td>
         <td>{row.firstname + " " + row.lastname}</td>
-        <td>{row.total}</td>
+        <td>{row.total/1000}</td>
       </tr>
     );
   });
