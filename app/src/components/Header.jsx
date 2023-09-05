@@ -6,7 +6,7 @@ function Header() {
     <div className="header-main">
       <div className="header-submain">
         <div className="header-top">
-          <img className="header-logo" src="/temporary-logo.jpg" alt="" />
+          <img className="header-logo" src="/løpeuka-logo.png" alt="" />
         </div>
         <div className="header-bottom">
           <a href="" target="_blank" className="nav-btn">
