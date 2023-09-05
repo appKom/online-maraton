@@ -84,7 +84,7 @@ const MainPage = (props) => {
       <div id="ledertavle">
         <Paragraph
           header="Hvem løper?"
-          text="Her kan du se hvem som har meldt seg på, hvor langt de har løpt totalt og hvilken plass de ligger på sammenlagt.
+          text="Her kan du se alle som har meldt seg på, hvor langt de har løpt totalt og hvilken plass de ligger på sammenlagt.
           NB! Tabellen kan ta inntil 30 sekunder på å laste."
         />
         <AlleTavle data={stravaData} />

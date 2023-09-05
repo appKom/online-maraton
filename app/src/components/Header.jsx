@@ -34,7 +34,7 @@ function Header() {
             }}
             className="nav-btn"
           >
-            LEDERTAVLE
+            DELTAKERTAVLE
           </a>
         </div>
       </div>
