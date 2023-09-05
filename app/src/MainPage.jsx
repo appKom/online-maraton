@@ -34,19 +34,25 @@ const MainPage = (props) => {
       <Header />
       <CoverImage image="/temporary-cover1.jpg" />
 
-      <Paragraph
-        header="Hvorfor løper vi?"
-        text="Barnekreft er ikke det samme som kreft hos voksne. Hos barn utvikles kreften hurtig
-        og det finnes ingen kjente ytre faktorer som er av betydning for hvordan sykdommen utvikler seg.
-        Rundt 200 barn og unge mellom 0 til 18 år rammes hvert år av en kreftsykdom i Norge. Totaloverlevelsen
-        av barnekreft er i Norge er cirka 85 prosent.
+      <div id="støtt" >
+        <Paragraph
+        header="Støtt barnekreftforeningen"
+        text="Online Linjeforening ønsker å støtte Barnekreftsforeningens arbeid, og det gjør vi ved å løpe!
 
-        Selv om kreft hos barn og ungdom heldigvis er sjelden, er man desto mer avhengig av både nasjonalt,
-        nordisk og internasjonalt samarbeid for å oppnå kunnskap og kunne vurdere behandlingsresultater.
+        Du har nå muligheten til å støtte Barnekreftforeningen under løpeuken ved å vippse en donasjon. Hver eneste krone teller, og din sjenerøse støtte vil bidra til å forbedre livene til barn som kjemper mot kreft og deres familier. Sammen kan vi utgjøre en forskjell og gi håp til de som trenger det mest. Takk for din støtte!"
+        />
 
-        Online Linjeforening ønsker å støtte Barnekreftsforeningens arbeid, og det gjør vi ved å løpe!
-      "
-      />
+        <div className="paragraph-main">
+            <div className="paragraph-submain">
+                <div className="paragraph-text">
+                    Vippsnummer: <b>XXX</b>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+      <JoggaSpesial data={stravaData} />
 
       <CoverImage image="/temporary-cover2.jpg" />
 
@@ -64,21 +70,16 @@ const MainPage = (props) => {
       "
       />
 
-      <div id="støtt" >
-        <Paragraph
-        header="Støtt barnekreftforeningen"
-        text="Du har nå muligheten til å støtte Barnekreftforeningen under løpeuken ved å vippse en donasjon. Hver eneste krone teller, og din sjenerøse støtte vil bidra til å forbedre livene til barn som kjemper mot kreft og deres familier. Sammen kan vi utgjøre en forskjell og gi håp til de som trenger det mest. Takk for din støtte!"
-        />
-
-        <div className="paragraph-main">
+      <div className="paragraph-main">
             <div className="paragraph-submain">
                 <div className="paragraph-text">
-                    Vippsnummer: <b>XXX</b>
+                    <b>OBS! For at en aktvitet skal bli vist på denne siden er det viktig at den har 'Online' i tittelen.</b>
                 </div>
             </div>
         </div>
 
-      </div>
+
+      
 
       <div id="ledertavle">
         <Paragraph
@@ -88,8 +89,6 @@ const MainPage = (props) => {
         />
         <AlleTavle data={stravaData} />
       </div>
-
-      <JoggaSpesial data={stravaData} />
 
       <Footer />
     </div>
