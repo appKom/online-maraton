@@ -26,7 +26,6 @@ const MainPage = (props) => {
       .then((r) => r.json())
       .then((data) => {
         setStravaData(data);
-        console.log(data);
       });
   };
 
