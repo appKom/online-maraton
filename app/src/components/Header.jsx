@@ -9,20 +9,20 @@ function Header() {
           <img className="header-logo" src="/temporary-logo.jpg" alt="" />
         </div>
         <div className="header-bottom">
+          <a href="" target="_blank" className="nav-btn">
+            MELD DEG PÅ
+          </a>
           <a
-            href="#sponsorer"
+            href="#støtt"
             onClick={(e) => {
               e.preventDefault();
               document
-                .querySelector("#sponsorer")
+                .querySelector("#støtt")
                 .scrollIntoView({ behavior: "smooth" });
             }}
-            className="nav-btn"
+            className="nav-btn nav-btn-main"
           >
-            SPONSORER
-          </a>
-          <a href="" target="_blank" className="nav-btn nav-btn-main">
-            MELD DEG PÅ
+            STØTT MED VIPPS
           </a>
           <a
             href="#ledertavle"
@@ -36,7 +36,6 @@ function Header() {
           >
             LEDERTAVLE
           </a>
-          
         </div>
       </div>
     </div>
