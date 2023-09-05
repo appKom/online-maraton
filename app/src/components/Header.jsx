@@ -9,7 +9,7 @@ function Header() {
           <img className="header-logo" src="/temporary-logo.jpg" alt="" />
         </div>
         <div className="header-bottom">
-          <a href="" target="_blank" className="nav-btn">
+          <a href="https://www.strava.com/clubs/1118846" target="_blank" className="nav-btn">
             MELD DEG PÅ
           </a>
           <a
