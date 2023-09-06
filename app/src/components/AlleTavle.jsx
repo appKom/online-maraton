@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-
-import { Table, ScrollArea, rem } from "@mantine/core";
+import { useState } from "react";
+import { Table, ScrollArea } from "@mantine/core";
 import "../styles/Alletavle.css";
 import { TextInput } from "@mantine/core";
+import { TailSpin } from 'react-loader-spinner'
 
 function sortByTotal(data) {
   return data.sort((a, b) => b.total - a.total);
@@ -35,29 +35,46 @@ const AlleTavle = (props) => {
 
   return (
     <div className="alleTavle">
-      <TextInput
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        label="Søk etter ditt navn"
-        placeholder="Søk"
-        className="searchInput"
-      />
+        {data.length > 0 ? (
+            <div>
+                <TextInput
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    label="Søk etter ditt navn"
+                    placeholder="Søk"
+                    className="searchInput"
+                />
 
-      <br />
+                <br />
 
-      <ScrollArea h={300}>
-        <Table miw={700}>
-          <thead className={"tableHeader"}>
-            <tr>
-              <th>Plassering</th>
-              <th>Navn</th>
-              <th>Antall kilometer</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </Table>
-      </ScrollArea>
+                <ScrollArea h={300}>
+                    <Table miw={700}>
+                    <thead className={"tableHeader"}>
+                        <tr>
+                        <th>Plassering</th>
+                        <th>Navn</th>
+                        <th>Antall kilometer</th>
+                        </tr>
+                    </thead>
+                    <tbody>{rows}</tbody>
+                    </Table>
+                </ScrollArea>
+            </div>
+        ) : (
+            <div className="spinner">
+                <TailSpin
+                    height="80"
+                    width="80"
+                    color="#0d5474"
+                    ariaLabel="tail-spin-loading"
+                    radius="1"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                />
+            </div>
+        )}
     </div>
   );
 };
