@@ -73,13 +73,13 @@ const MainPage = (props) => {
       <div className="paragraph-main">
             <div className="paragraph-submain">
                 <div className="paragraph-text">
-                    <b>OBS! For at en aktvitet skal bli vist på denne siden er det viktig at den har 'Online' i tittelen.</b>
+                    <b>OBS! For at en aktivitet skal bli vist på denne siden er det viktig at den har 'Online' i tittelen.</b>
                 </div>
             </div>
         </div>
 
 
-      
+
 
       <div id="ledertavle">
         <Paragraph
