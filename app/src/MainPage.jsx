@@ -45,7 +45,7 @@ const MainPage = (props) => {
         <div className="paragraph-main">
             <div className="paragraph-submain">
                 <div className="paragraph-text">
-                    <b>Vippsummer kommer snart!</b>
+                    <b>Vippsnummer kommer snart!</b>
                     {/* Vippsnummer: <b>XXX</b> */}
                 </div>
             </div>
