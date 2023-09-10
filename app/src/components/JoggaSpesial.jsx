@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/JoggaSpesial.css";
-import { TailSpin } from  'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 
 const JoggaSpesial = (data) => {
 

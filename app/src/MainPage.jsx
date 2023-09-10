@@ -45,7 +45,8 @@ const MainPage = (props) => {
         <div className="paragraph-main">
             <div className="paragraph-submain">
                 <div className="paragraph-text">
-                    Vippsnummer: <b>XXX</b>
+                    <b>Vippsummer kommer snart!</b>
+                    {/* Vippsnummer: <b>XXX</b> */}
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@ const MainPage = (props) => {
       <div className="paragraph-main">
             <div className="paragraph-submain">
                 <div className="paragraph-text">
-                    <b>OBS! For at en aktivitet skal bli vist på denne siden er det viktig at den har 'Online' i tittelen.</b>
+                <b>OBS! For at en aktivitet skal gjelde i statistikken på denne siden er det viktig at den har 'Online' i tittelen.</b>
                 </div>
             </div>
         </div>
