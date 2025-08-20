@@ -32,8 +32,14 @@ const MainPage = (props) => {
 
   return (
     <div className="mainPage" >
-      <Header />
       <CoverImage image="/temporary-cover1.jpg" />
+      <Header />
+      <JoggaSpesial data={stravaData} />
+      <div className="paragraph-header jogga-header">Poengtavle</div>
+      <div id="ledertavle">
+        <AlleTavle data={stravaData} />
+      </div>
+      
 
       <Paragraph
         header="Hvorfor løper vi?"
@@ -65,11 +71,8 @@ const MainPage = (props) => {
       "
     
       />
-      <div id="ledertavle">
-        <AlleTavle data={stravaData} />
-      </div>
+      
 
-      <JoggaSpesial data={stravaData} />
 
       <Paragraph
         header="Sponsorer"
